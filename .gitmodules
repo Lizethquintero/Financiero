@@ -1,0 +1,4 @@
+[submodule "infotodoo/thomasgregandsons/contacs_thomas"]
+	path = infotodoo/thomasgregandsons/contacs_thomas
+	url = git@github.com:infotodoo/thomasgregandsons.git
+	branch = 17724
