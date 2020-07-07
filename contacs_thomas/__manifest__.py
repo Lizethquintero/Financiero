@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Contacs Thomas",
+    'name': "Contacts Thomas",
 
     'summary': "Contacs Thomas",
 
