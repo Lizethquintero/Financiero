@@ -2,3 +2,8 @@
 	path = infotodoo/thomasgregandsons/contacs_thomas
 	url = git@github.com:infotodoo/thomasgregandsons.git
 	branch = 17724
+
+[submodule "infotodoo/17724"]
+	path = infotodoo/17724
+	url = git@github.com:infotodoo/thomasgregandsons.git
+	branch = 17724
