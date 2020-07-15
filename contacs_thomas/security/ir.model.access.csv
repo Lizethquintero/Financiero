@@ -19,3 +19,4 @@ access_crm_cost_name,crm_cost_name.crm_cost_name,model_crm_cost_name,base.group_
 access_temporary_union_name,temporary_union_name.temporary_union_name,model_temporary_union_name,base.group_user,1,1,1,1
 access_company_invoices,company_invoices.company_invoices,model_company_invoices,base.group_user,1,1,1,1
 access_crm_lead2opportunity_partner,crm_lead2opportunity_partner.crm_lead2opportunity_partner,model_crm_lead2opportunity_partner,base.group_user,1,1,1,1
+

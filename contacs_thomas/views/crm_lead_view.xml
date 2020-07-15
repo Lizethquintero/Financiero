@@ -116,7 +116,7 @@
             <field name="arch" type="xml">
                 <form string="Fortalezas">
                     <group>
-                        <field name="name" />
+                        <field name="name"/>
                     </group>
                 </form>
             </field>
@@ -130,6 +130,12 @@
                     <field name="name" />
                 </tree>
             </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="crm_strengths_form_action">
+            <field name="name">Fortalezas</field>
+            <field name="res_model">crm.strengths</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <record model="ir.ui.view" id="crm_weaknesses_form">
@@ -154,6 +160,12 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="crm_weaknesses_form_action">
+            <field name="name">Debilidades</field>
+            <field name="res_model">crm.weaknesses</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <record model="ir.ui.view" id="crm_cost_tree">
             <field name="name">crm.cost.tree</field>
             <field name="model">crm.cost</field>
@@ -170,9 +182,27 @@
             <field name="model">crm.competitor</field>
             <field name="arch" type="xml">
                 <form string="Competidores">
-                    <field name="competitor_name" />
+                    <group>
+                        <field name="competitor_name" string="Nombre Competidor"/>
+                    </group>
                 </form>
             </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_competitor_tree">
+            <field name="name">crm.competitor.tree</field>
+            <field name="model">crm.competitor</field>
+            <field name="arch" type="xml">
+                <tree string="Competidores">
+                    <field name="competitor_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="crm_competitor_form_action">
+            <field name="name">Competidores</field>
+            <field name="res_model">crm.competitor</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
 
@@ -180,24 +210,34 @@
             <field name="name">temporary.union.form</field>
             <field name="model">temporary.union</field>
             <field name="arch" type="xml">
-                <form string="Competidores">
-                    <field name="name" string="Nombre lider" />
-                    <field name="participation" invisible="True" />
-                    <field name="funtions" invisible="True" />
-                    <field name="temporary_union_ids" invisible="True" />
+                <form string="Unión temporal">
+                   <group>
+                        <field name="name" string="Nombre lider" />
+                        <field name="participation" invisible="True" />
+                        <field name="funtions" invisible="True" />
+                        <field name="temporary_union_ids" invisible="True" />
+                    </group>
                 </form>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="unspsc_code_tree">
-            <field name="name">unspsc.code.tree</field>
-            <field name="model">unspsc.code</field>
+        <record model="ir.ui.view" id="temporary_union_tree">
+            <field name="name">temporary.union.tree</field>
+            <field name="model">temporary.union</field>
             <field name="arch" type="xml">
-                <tree string="Costos operacionales">
-                    <field name="code_name" string="Nombre" />
-                    <field name="name" string="Código" />
+                <tree string="Union temporal">
+                    <field name="name" string="Nombre lider" />
+                    <field name="participation" invisible="True" />
+                    <field name="funtions" invisible="True" />
+                    <field name="temporary_union_ids" invisible="True" />
                 </tree>
             </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="temporary_union_form_action">
+            <field name="name">Union temporal</field>
+            <field name="res_model">temporary.union</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <record model="ir.ui.view" id="unspsc_code_form">
@@ -213,6 +253,23 @@
                     </sheet>
                 </form>
             </field>
+        </record>
+
+        <record model="ir.ui.view" id="unspsc_code_tree">
+            <field name="name">unspsc.code.tree</field>
+            <field name="model">unspsc.code</field>
+            <field name="arch" type="xml">
+                <tree string="Costos operacionales">
+                    <field name="code_name" string="Nombre" />
+                    <field name="name" string="Código" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="unspsc_code_form_action">
+            <field name="name">Codigo unspsc</field>
+            <field name="res_model">unspsc.code</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <record id="crm_team_budget" model="ir.ui.view">
@@ -436,5 +493,10 @@
             </field>
         </record>
     </data>
-    <menuitem id="benefit_center_menu" name="Centro de Beneficios" action="benefit_center_form_action"  parent="crm.menu_crm_config_lead" sequence="5"/>
+    <menuitem id="benefit_center_menu" name="Centro de Beneficios" action="benefit_center_form_action"  parent="crm.menu_crm_config_lead" sequence="10"/>
+    <menuitem id="competitor_menu" name="Competidores" action="crm_competitor_form_action"  parent="crm.menu_crm_config_lead" sequence="20"/>
+    <menuitem id="strengths_center_menu" name="Fortalezas" action="crm_strengths_form_action"  parent="crm.menu_crm_config_lead" sequence="30"/>
+    <menuitem id="weknesses_center_menu" name="Debilidades" action="crm_weaknesses_form_action"  parent="crm.menu_crm_config_lead" sequence="40"/>
+    <menuitem id="codigo_unspsc_menu" name="Codigo UNSPSC" action="unspsc_code_form_action"  parent="crm.menu_crm_config_lead" sequence="50"/>
+    <menuitem id="temporary_union_center_menu" name="Unión Temporal" action="temporary_union_form_action"  parent="crm.menu_crm_config_lead" sequence="60"/>
 </odoo>
